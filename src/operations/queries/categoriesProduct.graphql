@@ -1,0 +1,51 @@
+query ($ids: String) {
+  categoryList(filters: { ids: { eq: $ids } }) {
+    children {
+      id
+      name
+      path
+      image_path
+      url_path
+      products {
+        items {
+          __typename
+          id
+          name
+          url_key
+          new_from_date
+          new_to_date
+          canonical_url
+          small_image {
+            url(width: 240, height: 300)
+          }
+          price_tiers {
+            discount {
+              amount_off
+              percent_off
+            }
+            final_price {
+              currency
+              value
+            }
+            quantity
+          }
+          price_range {
+            minimum_price {
+              regular_price {
+                currency
+                value
+              }
+              final_price {
+                currency
+                value
+              }
+            }
+          }
+          special_from_date
+          special_to_date
+        }
+      }
+    }
+    children_count
+  }
+}

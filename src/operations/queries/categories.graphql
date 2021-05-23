@@ -1,0 +1,27 @@
+query {
+  categoryList {
+    children_count
+    children {
+      id
+      name
+      url_key
+      url_path
+      updated_at
+      include_in_menu
+      children {
+        id
+        name
+        url_key
+        url_path
+        updated_at
+        children {
+          id
+          name
+          url_key
+          url_path
+          updated_at
+        }
+      }
+    }
+  }
+}

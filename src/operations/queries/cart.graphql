@@ -1,0 +1,9 @@
+query {
+  carts @client {
+    url_key
+    name
+    amount
+    price
+    image
+  }
+}

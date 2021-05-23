@@ -1,0 +1,117 @@
+query ($url_key: String) {
+  products(filter: { url_key: { eq: $url_key } }) {
+    items {
+      id
+      name
+      sku
+      stock_status
+      url_key
+      __typename
+      attribute_set_id
+      small_image {
+        url(width: 240, height: 300)
+        label
+      }
+      image {
+        url
+      }
+      review {
+        rating_summary
+        reviews_count
+      }
+      categories {
+        id
+        name
+        url_path
+        breadcrumbs {
+          category_id
+          category_url_path
+          category_name
+        }
+      }
+      price_range {
+        minimum_price {
+          discount {
+            amount_off
+            percent_off
+          }
+          final_price {
+            currency
+            value
+          }
+          fixed_product_taxes {
+            amount {
+              currency
+              value
+            }
+            label
+          }
+          regular_price {
+            currency
+            value
+          }
+        }
+      }
+      description {
+        html
+      }
+      media_gallery {
+        label
+        url
+      }
+      related_products {
+        id
+        name
+        sku
+        stock_status
+        url_key
+        __typename
+        attribute_set_id
+        small_image {
+          url(width: 240, height: 300)
+          label
+        }
+        image {
+          url
+        }
+        review {
+          rating_summary
+          reviews_count
+        }
+        categories {
+          id
+          name
+          url_path
+          breadcrumbs {
+            category_id
+            category_url_path
+            category_name
+          }
+        }
+        price_range {
+          minimum_price {
+            discount {
+              amount_off
+              percent_off
+            }
+            final_price {
+              currency
+              value
+            }
+            fixed_product_taxes {
+              amount {
+                currency
+                value
+              }
+              label
+            }
+            regular_price {
+              currency
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
